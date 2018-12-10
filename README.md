@@ -24,3 +24,10 @@ Make 2 cpu player play each other
 When pressed space add 1 more ball. Game ends when there is no ball.
 Make chrome extension.
 Give ball trail effect.
+
+Please take the following into consideration:
+The project will be tested on https://www.lcwaikiki.com/tr-TR/TR, so please develop it accordingly. (It can be an extension or run by pasting it in console).
+The project will be deployed on bitbucket, you can clone the URL below along with the Repository onto your local environment.
+After you’ve cloned the project, create a branch with your name under the Master branch, the created branch name should be in givenName-sirName format (e.g ian-brandon)
+At the end of the project all changes made should be sent to the branch under the comment “FINAL COMMIT”. We will be evaluating the projects depending on what’s under this comment.
+Repository URL: https://insider-optimus@bitbucket.org/insider-optimus/ps-dev-project.git
