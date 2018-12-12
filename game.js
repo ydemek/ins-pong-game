@@ -57,40 +57,22 @@
     }
 
     function draw() {
-        $('<div/>', {
-            id: 'pong-game'
-        }).css(CSS.arena).appendTo('body');
-
-        $('<div/>', {
-            id: 'pong-line'
-        }).css(CSS.line).appendTo('#pong-game');
-
-        $('<div/>', {
-            id: 'pong-ball'
-        }).css(CSS.ball).appendTo('#pong-game');
-
-        $('<div/>', {
-            id: 'stick-1'
-        }).css($.extend(CSS.stick1, CSS.stick)).appendTo('#pong-game');
+        $('<div/>', {id: 'pong-game'}).css(CSS.arena).appendTo('body');
+        $('<div/>', {id: 'pong-line'}).css(CSS.line).appendTo('#pong-game');
+        $('<div/>', {id: 'pong-ball'}).css(CSS.ball).appendTo('#pong-game');
+        $('<div/>', {id: 'stick-1'}).css($.extend(CSS.stick1, CSS.stick))
+        .appendTo('#pong-game');
     }
 
     function setEvents() {
         $(document).on('keydown', function (e) {
             if (e.keyCode == 87) {
-                CONSTS.stick1Speed = -10;
-            }
-
-            if (e.keyCode == 83) {
-                CONSTS.stick1Speed = 10;
+                CONSTS.stick1Speed = -66;
             }
         });
 
         $(document).on('keyup', function (e) {
             if (e.keyCode == 87) {
-                CONSTS.stick1Speed = 0;
-            }
-
-            if (e.keyCode == 83) {
                 CONSTS.stick1Speed = 0;
             }
         });
@@ -99,36 +81,20 @@
     function loop() {
         window.pongLoop = setInterval(function () {
             CSS.stick1.top += CONSTS.stick1Speed;
-
-            if (CSS.stick1.top <= 0) {
-                CSS.stick1.top = 0;
-            }
-
-            if (CSS.stick1.top >= CSS.arena.height - CSS.stick.height) {
-                CSS.stick1.top = CSS.arena.height - CSS.stick.height;
-            }
-
             $('#stick-1').css('top', CSS.stick1.top);
 
             CSS.ball.top += CONSTS.ballTopSpeed;
-            CSS.ball.left += CONSTS.ballLeftSpeed;
+            CSS.ball.left = 110;
 
             if (CSS.ball.top <= 0 ||
                 CSS.ball.top >= CSS.arena.height - CSS.ball.height) {
                 CONSTS.ballTopSpeed = CONSTS.ballTopSpeed * -1;
             }
 
-            $('#pong-ball').css({
-                top: CSS.ball.top,
-                left: CSS.ball.left
-            });
+            $('#pong-ball').css({top: CSS.ball.top,left: CSS.ball.left});
 
             if (CSS.ball.left <= CSS.stick.width) {
-                if (CSS.ball.top > CSS.stick1.top && CSS.ball.top < CSS.stick1.top + CSS.stick.height) {
-                    CONSTS.ballLeftSpeed = CONSTS.ballLeftSpeed * -1;
-                } else {
-                    roll();
-                }
+            	CSS.ball.top > CSS.stick1.top && CSS.ball.top < CSS.stick1.top + CSS.stick.height && (CONSTS.ballLeftSpeed = CONSTS.ballLeftSpeed * -1) || roll();
             }
 
             if (CSS.ball.left >= CSS.arena.width - CSS.ball.width - CSS.stick.width) {
