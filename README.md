@@ -6,9 +6,8 @@ We are going to develop the classic Atari game “Pong”.
 
 ### Rules ###
 * 2 sides will play the game
-* Every side will have a vertical saver (stick or whatever :) width of 20px height 10% of screen
-* Savers must be  5% away from left and right side of the window.
-* There will be a 20px x 20px square ball which has a constant speed to a direction.
+* Every side will have a vertical saver (stick or whatever :) width of 12px height 85px
+* There will be a 15px x 15px square ball which has a constant speed to a direction.
 * When ball hit saver or Top of the screen or  bottom of the screen the ball will be reflected like a mirror. For ex if ball hits with 30’ it will leave with 150’ (+ - 10').
 * If ball reaches left or right side the ball disappears and opponent gets point.
 * The ball creates in center and goes to a random direction between (30’ 150’)
@@ -31,4 +30,4 @@ We are going to develop the classic Atari game “Pong”.
 * The project will be deployed on bitbucket, you can clone the URL below along with the Repository onto your local environment.
 * After you’ve cloned the project, create a branch with your name under the Master branch, the created branch name should be in givenName-sirName format (e.g ian-brandon)
 * At the end of the project all changes made should be sent to the branch under the comment “FINAL COMMIT”. We will be evaluating the projects depending on what’s under this comment.
-* Repository URL: git clone https://tuzluk1@bitbucket.org/insider-optimus/insdr-pong-game.git
+* Repository URL: git clone https://bitbucket.org/insider-optimus/insdr-pong-game.git
