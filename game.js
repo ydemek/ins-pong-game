@@ -139,7 +139,7 @@
       if (CSS.stick1.top <= 10) {
         CSS.stick1.top = 0;
       }
-      if (CSS.stick1.top >= 570 /* CSS.arena.height - CSS.stick.height */) {
+      if (CSS.stick1.top >= 570) {
         CSS.stick1.top = 515 /* CSS.arena.height - CSS.stick.height */;
       }
       if (CSS.stick2.top <= 10) {
